@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+'
+    }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
+    compile 'org.jboss.resteasy:resteasy-jaxrs:3.0.9.Final'
+    compile 'org.jboss.resteasy:resteasy-servlet-initializer:3.0.9.Final'
+    compile 'org.jboss.resteasy:resteasy-jackson-provider:3.0.9.Final'
+    compile 'com.wordnik:swagger-jaxrs:1.5.0-M2'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+war {
+    destinationDir file("$destinationDir/webapps")
+}
+gretty {
+    servletContainer = 'jetty9'
+    loggingLevel = 'debug'
+}
