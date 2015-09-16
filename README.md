@@ -1,3 +1,8 @@
+---
+services: app-service\api
+platforms: java
+author: pkefal
+---
 ##JavaAPIApp sample
 
 1. Download as zip or clone the repository. 
