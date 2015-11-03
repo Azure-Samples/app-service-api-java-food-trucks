@@ -35,4 +35,5 @@ war {
 gretty {
     servletContainer = 'jetty9'
     loggingLevel = 'debug'
+    contextPath = '/JavaAPIApp'
 }
