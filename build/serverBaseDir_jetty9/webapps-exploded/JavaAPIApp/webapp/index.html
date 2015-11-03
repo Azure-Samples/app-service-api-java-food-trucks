@@ -29,12 +29,13 @@
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="/JavaAPIApp/swagger-ui">Swagger UI</a></li>
                     <li><a href="/JavaAPIApp/api/swagger.json">Swagger JSON</a></li>
-                    <li><a href="#" onclick="generate()">Generate C# Client</a></li>
+                    <!-- <li><a href="#" onclick="generate()">Generate C# Client</a></li> -->
                 </ul>
             </div>
         </div>
     </nav>
     <div id="dataForm" style="display: none">
+        <!-- makeCode is no longer used; now you should download AutoRest from https://github.com/Azure/autorest to use it -->
         <form id="makeCode" action="https://autorestapi.azurewebsites.net/generate" method="POST">
             <input type="hidden" id="codegenerator" name="CodeGenerator" value="CSharp" />
             <input type="hidden" id="modeler" name="Modeler" value="Swagger" />
